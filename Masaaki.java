@@ -59,11 +59,11 @@ public class Prova {
                	if(mago.getVida() <= 0){
                     a = 0;
                     JOptionPane.showMessageDialog(null, mago.getNome() + "\n" + "Vida: " + mago.getVida() + "\n" + dragon.getNome() + "\n" + "Vida: " + dragon.getVida());
-                    break;
+                    break; //Quebra o while(true) da linha 39
             	} else if (dragon.getVida() <= 0){
-                    a = 1;
+                    a = 1; 
                     JOptionPane.showMessageDialog(null, mago.getNome() + "\n" + "Vida: " + mago.getVida() + "\n" + dragon.getNome() + "\n" + "Vida: " + dragon.getVida());
-                    break;
+                    break; //Quebra o while(true) da linha 39
             	}
 
                	JOptionPane.showMessageDialog(null, "Rodada do Inimigo...");
@@ -98,11 +98,11 @@ public class Prova {
             	if(mago.getVida() <= 0){ //Verficação para saber se a vida está negativa. Nesse caso, se o Herói morreu
                     a = 0;
                     JOptionPane.showMessageDialog(null, mago.getNome() + "\n" + "Vida: " + mago.getVida() + "\n" + dragon.getNome() + "\n" + "Vida: " + dragon.getVida());
-                    break;
+                    break; //Quebra o while(true) da linha 39
             	} else if (dragon.getVida() <= 0){ //Verficação para saber se a vida está negativa. Nesse caso, se o Monstro morreu
                     a = 1;
                     JOptionPane.showMessageDialog(null, mago.getNome() + "\n" + "Vida: " + mago.getVida() + "\n" + dragon.getNome() + "\n" + "Vida: " + dragon.getVida());
-                    break;
+                    break; //Quebra o while(true) da linha 39
             	}
             }
             
@@ -146,11 +146,11 @@ public class Prova {
            		if(mago.getVida() <= 0){
            			a = 0;
            			JOptionPane.showMessageDialog(null, mago.getNome() + "\n" + "Vida: " + mago.getVida() + "\n" + gigante.getNome() + "\n" + "Vida: " + gigante.getVida());
-           			break;
+           			break; //Quebra o while(true) da linha 126
            		} else if (gigante.getVida() <= 0){
            			a = 1;
            			JOptionPane.showMessageDialog(null, mago.getNome() + "\n" + "Vida: " + mago.getVida() + "\n" + gigante.getNome() + "\n" + "Vida: " + gigante.getVida());
-           			break;
+           			break; //Quebra o while(true) da linha 126
            		}
            		
            		JOptionPane.showMessageDialog(null, "Rodada do Inimigo...");
@@ -185,11 +185,11 @@ public class Prova {
            		if(mago.getVida() <= 0){ //Verficação para saber se a vida está negativa. Nesse caso, se o Herói morreu
            			a = 0;
            			JOptionPane.showMessageDialog(null, mago.getNome() + "\n" + "Vida: " + mago.getVida() + "\n" + gigante.getNome() + "\n" + "Vida: " + gigante.getVida());
-           			break;
+           			break; //Quebra o while(true) da linha 126
            		} else if (gigante.getVida() <= 0){ //Verficação para saber se a vida está negativa. Nesse caso, se o Monstro morreu
            			a = 1;
            			JOptionPane.showMessageDialog(null, mago.getNome() + "\n" + "Vida: " + mago.getVida() + "\n" + gigante.getNome() + "\n" + "Vida: " + gigante.getVida());
-           			break;
+           			break; //Quebra o while(true) da linha 126
            		}
            	}
            	
@@ -233,11 +233,11 @@ public class Prova {
            		if(mago.getVida() <= 0){
            			a = 0;
            			JOptionPane.showMessageDialog(null, mago.getNome() + "\n" + "Vida: " + mago.getVida() + "\n" + bomba.getNome() + "\n" + "Vida: " + bomba.getVida());
-           			break;
+           			break; //Quebra o while(true) da linha 213
            		} else if (gigante.getVida() <= 0){
            			a = 1;
            			JOptionPane.showMessageDialog(null, mago.getNome() + "\n" + "Vida: " + mago.getVida() + "\n" + bomba.getNome() + "\n" + "Vida: " + bomba.getVida());
-           			break;
+           			break; //Quebra o while(true) da linha 213
            		}
            		
            		JOptionPane.showMessageDialog(null, "Rodada do Inimigo...");
@@ -272,11 +272,11 @@ public class Prova {
            		if(mago.getVida() <= 0){ //Verficação para saber se a vida está negativa. Nesse caso, se o Herói morreu
            			a = 0;
            			JOptionPane.showMessageDialog(null, mago.getNome() + "\n" + "Vida: " + mago.getVida() + "\n" + bomba.getNome() + "\n" + "Vida: " + bomba.getVida());
-           			break;
+           			break; //Quebra o while(true) da linha 213
            		} else if (bomba.getVida() <= 0){ //Verficação para saber se a vida está negativa. Nesse caso, se o Monstro morreu
            			a = 1;
            			JOptionPane.showMessageDialog(null, mago.getNome() + "\n" + "Vida: " + mago.getVida() + "\n" + bomba.getNome() + "\n" + "Vida: " + bomba.getVida());
-           			break;
+           			break; //Quebra o while(true) da linha 213
            		}
            	}	        
            	if(a == 1){ //se 'a' for igual a 1, printar o Herói como vencendor da batalha
@@ -293,6 +293,7 @@ public class Prova {
            		option = JOptionPane.showOptionDialog(null, "E então?", "Novo jogo?", JOptionPane.DEFAULT_OPTION, 3, null, tentarNovamente, tentarNovamente[0]);
            
 //Falta a ajeitar para reiniciar o game
+           		
            	}
            	
         }
@@ -328,11 +329,11 @@ public class Prova {
                	if(guerreiro.getVida() <= 0){
                     a = 0;
                     JOptionPane.showMessageDialog(null, guerreiro.getNome() + "\n" + "Vida: " + guerreiro.getVida() + "\n" + dragon.getNome() + "\n" + "Vida: " + dragon.getVida());
-                    break;
+                    break; //Quebra o while(true) da linha 309
             	} else if (dragon.getVida() <= 0){
                     a = 1;
                     JOptionPane.showMessageDialog(null, guerreiro.getNome() + "\n" + "Vida: " + guerreiro.getVida() + "\n" + dragon.getNome() + "\n" + "Vida: " + dragon.getVida());
-                    break;
+                    break; //Quebra o while(true) da linha 309
             	}
 
                	JOptionPane.showMessageDialog(null, "Rodada do Inimigo...");
@@ -356,10 +357,10 @@ public class Prova {
                		switch (i){//Se countM não for maior que 4, o valor de 'i' será verificado para identificar qual ataque foi feito pelo monstro e printá-lo
                		case 0: JOptionPane.showMessageDialog(null, dragon.getNomeGolpePrimario()); //Printar o ataque primário
                					countM++;
-               					break;
+               					break; //Quebra o while(true) da linha 309
                			case 1: JOptionPane.showMessageDialog(null, dragon.getNomeGolpeSecundario()); //Printar o ataque secundário 
                					countM++;
-               					break;
+               					break; //Quebra o while(true) da linha 309
                		}
                	}
                	countM = 0;
@@ -415,11 +416,11 @@ public class Prova {
            		if(guerreiro.getVida() <= 0){
            			a = 0;
            			JOptionPane.showMessageDialog(null, guerreiro.getNome() + "\n" + "Vida: " + guerreiro.getVida() + "\n" + gigante.getNome() + "\n" + "Vida: " + gigante.getVida());
-           			break;
+           			break; //Quebra o while(true) da linha 396
            		} else if (gigante.getVida() <= 0){
            			a = 1;
            			JOptionPane.showMessageDialog(null, guerreiro.getNome() + "\n" + "Vida: " + guerreiro.getVida() + "\n" + gigante.getNome() + "\n" + "Vida: " + gigante.getVida());
-           			break;
+           			break; //Quebra o while(true) da linha 396
            		}	
            		
            		JOptionPane.showMessageDialog(null, "Rodada do Inimigo...");
@@ -454,11 +455,11 @@ public class Prova {
            		if(guerreiro.getVida() <= 0){ //Verficação para saber se a vida está negativa. Nesse caso, se o Herói morreu
            			a = 0;
            			JOptionPane.showMessageDialog(null, guerreiro.getNome() + "\n" + "Vida: " + guerreiro.getVida() + "\n" + gigante.getNome() + "\n" + "Vida: " + gigante.getVida());
-           			break;
+           			break; //Quebra o while(true) da linha 396
            		} else if (gigante.getVida() <= 0){ //Verficação para saber se a vida está negativa. Nesse caso, se o Monstro morreu
            			a = 1;
            			JOptionPane.showMessageDialog(null, guerreiro.getNome() + "\n" + "Vida: " + guerreiro.getVida() + "\n" + gigante.getNome() + "\n" + "Vida: " + gigante.getVida());
-           			break;
+           			break; //Quebra o while(true) da linha 396
            		}
            	}
            	
@@ -501,12 +502,12 @@ public class Prova {
         	
            		if(guerreiro.getVida() <= 0){
            			a = 0;
-                JOptionPane.showMessageDialog(null, guerreiro.getNome() + "\n" + "Vida: " + guerreiro.getVida() + "\n" + bomba.getNome() + "\n" + "Vida: " + bomba.getVida());
-                break;
+           			JOptionPane.showMessageDialog(null, guerreiro.getNome() + "\n" + "Vida: " + guerreiro.getVida() + "\n" + bomba.getNome() + "\n" + "Vida: " + bomba.getVida());
+           			break; //Quebra o while(true) da linha 396
            		} else if (gigante.getVida() <= 0){
            			a = 1;
            			JOptionPane.showMessageDialog(null, guerreiro.getNome() + "\n" + "Vida: " + guerreiro.getVida() + "\n" + bomba.getNome() + "\n" + "Vida: " + bomba.getVida());
-           			break;
+           			break; //Quebra o while(true) da linha 483
            		}
 
            		JOptionPane.showMessageDialog(null, "Rodada do Inimigo...");
@@ -541,11 +542,11 @@ public class Prova {
            		if(guerreiro.getVida() <= 0){ //Verficação para saber se a vida está negativa. Nesse caso, se o Herói morreu
            			a = 0;
            			JOptionPane.showMessageDialog(null, guerreiro.getNome() + "\n" + "Vida: " + guerreiro.getVida() + "\n" + bomba.getNome() + "\n" + "Vida: " + bomba.getVida());
-           			break;
+           			break; //Quebra o while(true) da linha 396
            		} else if (bomba.getVida() <= 0){ //Verficação para saber se a vida está negativa. Nesse caso, se o Monstro morreu
            			a = 1;
            			JOptionPane.showMessageDialog(null, guerreiro.getNome() + "\n" + "Vida: " + guerreiro.getVida() + "\n" + bomba.getNome() + "\n" + "Vida: " + bomba.getVida());
-           			break;
+           			break; //Quebra o while(true) da linha 396
            		}	
            	}
            	
@@ -595,11 +596,11 @@ public class Prova {
                	if(arqueiro.getVida() <= 0){
                     a = 0;
                     JOptionPane.showMessageDialog(null, arqueiro.getNome() + "\n" + "Vida: " + arqueiro.getVida() + "\n" + dragon.getNome() + "\n" + "Vida: " + dragon.getVida());
-                    break;
+                    break; //Quebra o while(true) da linha 576
             	} else if (dragon.getVida() <= 0){
                     a = 1;
                     JOptionPane.showMessageDialog(null, arqueiro.getNome() + "\n" + "Vida: " + arqueiro.getVida() + "\n" + dragon.getNome() + "\n" + "Vida: " + dragon.getVida());
-                    break;
+                    break; //Quebra o while(true) da linha 576
             	}
 
                	JOptionPane.showMessageDialog(null, "Rodada do Inimigo...");
@@ -634,11 +635,11 @@ public class Prova {
             	if(arqueiro.getVida() <= 0){ //Verficação para saber se a vida está negativa. Nesse caso, se o Herói morreu
                     a = 0;
                     JOptionPane.showMessageDialog(null, arqueiro.getNome() + "\n" + "Vida: " + arqueiro.getVida() + "\n" + dragon.getNome() + "\n" + "Vida: " + dragon.getVida());
-                    break;
+                    break; //Quebra o while(true) da linha 576
             	} else if (dragon.getVida() <= 0){ //Verficação para saber se a vida está negativa. Nesse caso, se o Monstro morreu
                     a = 1;
                     JOptionPane.showMessageDialog(null, arqueiro.getNome() + "\n" + "Vida: " + arqueiro.getVida() + "\n" + dragon.getNome() + "\n" + "Vida: " + dragon.getVida());
-                    break;
+                    break; //Quebra o while(true) da linha 576
             	}
             }
             
@@ -682,11 +683,11 @@ public class Prova {
            		if(arqueiro.getVida() <= 0){
            			a = 0;
            			JOptionPane.showMessageDialog(null, arqueiro.getNome() + "\n" + "Vida: " + arqueiro.getVida() + "\n" + gigante.getNome() + "\n" + "Vida: " + gigante.getVida());
-           			break;
+           			break; //Quebra o while(true) da linha 663
            		} else if (gigante.getVida() <= 0){
            			a = 1;
            			JOptionPane.showMessageDialog(null, arqueiro.getNome() + "\n" + "Vida: " + arqueiro.getVida() + "\n" + gigante.getNome() + "\n" + "Vida: " + gigante.getVida());
-                	break;
+                	break; //Quebra o while(true) da linha 663
            		}
            		
            		JOptionPane.showMessageDialog(null, "Rodada do Inimigo...");
@@ -721,11 +722,11 @@ public class Prova {
            		if(arqueiro.getVida() <= 0){ //Verficação para saber se a vida está negativa. Nesse caso, se o Herói morreu
            			a = 0;
            			JOptionPane.showMessageDialog(null, arqueiro.getNome() + "\n" + "Vida: " + arqueiro.getVida() + "\n" + gigante.getNome() + "\n" + "Vida: " + gigante.getVida());
-           			break;
+           			break; //Quebra o while(true) da linha 663
            		} else if (gigante.getVida() <= 0){ //Verficação para saber se a vida está negativa. Nesse caso, se o Monstro morreu
            			a = 1;
            			JOptionPane.showMessageDialog(null, arqueiro.getNome() + "\n" + "Vida: " + arqueiro.getVida() + "\n" + gigante.getNome() + "\n" + "Vida: " + gigante.getVida());
-           			break;
+           			break; //Quebra o while(true) da linha 663
            		}
            	}
            	
@@ -769,11 +770,11 @@ public class Prova {
            		if(arqueiro.getVida() <= 0){
            			a = 0;
                 JOptionPane.showMessageDialog(null, arqueiro.getNome() + "\n" + "Vida: " + arqueiro.getVida() + "\n" + bomba.getNome() + "\n" + "Vida: " + bomba.getVida());
-                	break;
+                	break; //Quebra o while(true) da linha 750
            		} else if (gigante.getVida() <= 0){
            			a = 1;
            			JOptionPane.showMessageDialog(null, arqueiro.getNome() + "\n" + "Vida: " + arqueiro.getVida() + "\n" + bomba.getNome() + "\n" + "Vida: " + bomba.getVida());
-           			break;
+           			break; //Quebra o while(true) da linha 750
            		}
            			
            		JOptionPane.showMessageDialog(null, "Rodada do Inimigo...");
@@ -809,11 +810,11 @@ public class Prova {
            		if(arqueiro.getVida() <= 0){ //Verficação para saber se a vida está negativa. Nesse caso, se o Herói morreu
            			a = 0;
            			JOptionPane.showMessageDialog(null, arqueiro.getNome() + "\n" + "Vida: " + arqueiro.getVida() + "\n" + bomba.getNome() + "\n" + "Vida: " + bomba.getVida());
-                	break;
+                	break; //Quebra o while(true) da linha 750
            		} else if (bomba.getVida() <= 0){ //Verficação para saber se a vida está negativa. Nesse caso, se o Monstro morreu
            			a = 1;
            			JOptionPane.showMessageDialog(null, arqueiro.getNome() + "\n" + "Vida: " + arqueiro.getVida() + "\n" + bomba.getNome() + "\n" + "Vida: " + bomba.getVida());
-           			break;
+           			break; //Quebra o while(true) da linha 750
            		}
            	}	
         
