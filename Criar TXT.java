@@ -17,7 +17,7 @@ public class CriarTxt {
 			this.nomeDeUsuario[i] = JOptionPane.showInputDialog("Nome de usuário:");
 			this.senha[i] = JOptionPane.showInputDialog("Senha:");
 			//informacoes += "usuario[" + i + "]" + " = {" + this.nomeDeUsuario[i] + ", " + this.senha[i] + "}; \n";
-			informacoes += this.nomeDeUsuario + "\n" + this.senha + "\n";
+			informacoes += this.nomeDeUsuario[i] + "\n" + this.senha[i] + "\n";
 			saida.format(informacoes);
 			i++;
 			saida.close();
