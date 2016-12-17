@@ -5,6 +5,7 @@ import javax.swing.JOptionPane;
 
 public class Prova {
     public static void main(String[] args) {
+    	String classe;
         int habilidade = 0; //Faz a comparação com o valor inteiro amazenado para saber qual hailidade o herṕi utilizou. Linha 36
         int escolha; //Variável interia para fazer comparações e saber qual herói o Jogador escolheu. Linha 25 
         int a = 0; //Parâmetro para printar se o Vencedor foi o herói ou o Monstro
@@ -28,7 +29,7 @@ public class Prova {
         
         if (escolha == 0){
         	Mago mago = new Mago();
-        	mago.setClasse("Mago"); //Atribuição da Classe ao personagem
+        	classe = "Mago"; //Atribuição da Classe ao personagem
         	mago.setTipo("Magic Power"); //Atribuição do Tipo de personagem
         	mago.setNome(JOptionPane.showInputDialog("Escolha o seu nome:"));
             mago.setAtaque(rand.nextInt(10)); //valor randomico para o ataque do mago
@@ -300,10 +301,13 @@ public class Prova {
         
         if (escolha == 1){
             Guerreiro guerreiro = new Guerreiro();
+            classe = "Guerreiro"; //Atribuição da Classe ao personagem
+            guerreiro.setClasse("Guerreiro");
+            guerreiro.setTipo("Physical Damage"); //Atribuição do Tipo de personagem
             guerreiro.setNome(JOptionPane.showInputDialog("Escolha o seu nome:"));
             guerreiro.setAtaque(rand.nextInt(10)); //valor randomico para o ataque do mago
             guerreiro.setDefesa(rand.nextInt(10)); //valor randomico para a defesa do mago
-            JOptionPane.showMessageDialog(null, guerreiro.getNome() + "\n" + "Vida: " + guerreiro.getVida() + "\n" + "Ataque: " + guerreiro.getAtaque() + "\n" + "Defesa: " + guerreiro.getDefesa() + "\n" + "Habilidade Primária: " + guerreiro.getNomeGolpePrimario() + "Habilidade Secundária: " + guerreiro.getNomeGolpeSecundario() + "\n" + "Ultimate: " + guerreiro.getNomeDoEspecial() + "*******************************" + "\n" + dragon.getNome() + "\n" + "Ataque: " + dragon.getAtaque() + "\n" + "Defesa: " + dragon.getDefesa() + "Habilidade Primária: " + dragon.getNomeGolpePrimario() + "Habilidade Secundária: " + dragon.getNomeGolpeSecundario() + "\n" + "Ultimate: " + dragon.getNomeDoEspecial(), "Adversários da batalha: ", 1); //printar os atributos do mago e do monstro.
+            JOptionPane.showMessageDialog(null, guerreiro.getNome() + "\n" + "Classe: " + guerreiro.getClassel() + "\n" + "Tipo de Dano: " + guerreiro.getTipo() + ""+ "Vida: " + guerreiro.getVida() + "\n" + "Ataque: " + guerreiro.getAtaque() + "\n" + "Defesa: " + guerreiro.getDefesa() + "\n" + "Habilidade Primária: " + guerreiro.getNomeGolpePrimario() + "Habilidade Secundária: " + guerreiro.getNomeGolpeSecundario() + "\n" + "Ultimate: " + guerreiro.getNomeDoEspecial() + "*******************************" + "\n" + dragon.getNome() + "\n" + "Ataque: " + dragon.getAtaque() + "\n" + "Defesa: " + dragon.getDefesa() + "Habilidade Primária: " + dragon.getNomeGolpePrimario() + "Habilidade Secundária: " + dragon.getNomeGolpeSecundario() + "\n" + "Ultimate: " + dragon.getNomeDoEspecial(), "Adversários da batalha: ", 1); //printar os atributos do mago e do monstro.
             JOptionPane.showMessageDialog(null, "Que comece a batalha!");
             
             while(true){
@@ -360,7 +364,7 @@ public class Prova {
                					break; //Quebra o while(true) da linha 309
                			case 1: JOptionPane.showMessageDialog(null, dragon.getNomeGolpeSecundario()); //Printar o ataque secundário 
                					countM++;
-               					break; //Quebra o while(true) da linha 309
+               					break; //Quebra o while(true) da linha 309 
                		}
                	}
                	countM = 0;
@@ -567,10 +571,12 @@ public class Prova {
  
         if (escolha == 2){
             Arqueiro arqueiro = new Arqueiro();
+            arqueiro.setClasse("Arqueiro");//Classe do tipo Arqueiro
+            arqueiro.setTipo("Physical Damage");//Denife o tipo de dano
             arqueiro.setNome(JOptionPane.showInputDialog("Escolha o seu nome:"));
             arqueiro.setAtaque(rand.nextInt(10)); //valor randomico para o ataque do mago
             arqueiro.setDefesa(rand.nextInt(10)); //valor randomico para a defesa do mago
-            JOptionPane.showMessageDialog(null, arqueiro.getNome() + "\n" + "Vida: " + arqueiro.getVida() + "\n" + "Ataque: " + arqueiro.getAtaque() + "\n" + "Defesa: " + arqueiro.getDefesa() + "\n" + "Habilidade Primária: " + arqueiro.getNomeGolpePrimario() + "Habilidade Secundária: " + arqueiro.getNomeGolpeSecundario() + "\n" + "Ultimate: " + arqueiro.getNomeDoEspecial() + "*******************************" + "\n" + dragon.getNome() + "\n" + "Ataque: " + dragon.getAtaque() + "\n" + "Defesa: " + dragon.getDefesa() + "Habilidade Primária: " + dragon.getNomeGolpePrimario() + "Habilidade Secundária: " + dragon.getNomeGolpeSecundario() + "\n" + "Ultimate: " + dragon.getNomeDoEspecial(), "Adversários da batalha: ", 1); //printar os atributos do mago e do monstro.
+            JOptionPane.showMessageDialog(null, arqueiro.getNome() + "\n" + "Classe: " + arqueiro.getClasse() + "Tipo de Dano: " + arqueiro.getTipo() + "\n" + "Vida: " + arqueiro.getVida() + "\n" + "Ataque: " + arqueiro.getAtaque() + "\n" + "Defesa: " + arqueiro.getDefesa() + "\n" + "Habilidade Primária: " + arqueiro.getNomeGolpePrimario() + "Habilidade Secundária: " + arqueiro.getNomeGolpeSecundario() + "\n" + "Ultimate: " + arqueiro.getNomeDoEspecial() + "*******************************" + "\n" + dragon.getNome() + "\n" + "Ataque: " + dragon.getAtaque() + "\n" + "Defesa: " + dragon.getDefesa() + "Habilidade Primária: " + dragon.getNomeGolpePrimario() + "Habilidade Secundária: " + dragon.getNomeGolpeSecundario() + "\n" + "Ultimate: " + dragon.getNomeDoEspecial(), "Adversários da batalha: ", 1); //printar os atributos do mago e do monstro.
             JOptionPane.showMessageDialog(null, "Que comece a batalha!");
             
             while(true){
@@ -938,9 +944,30 @@ abstract class Personagem{
 }
 
 class Herois extends Personagem{
-    int experiencia, nivel = 0;
+    int experiencia; //podemos fazer para somar um valor fixo de experiência (mas nesse caso sempre seria aconteceria a mesma coisa).
+    //eu proponho muda de "Experiência para nível (String)
+    int level = 1;//e aqui podemos fazer a separação dos níveis, em números
+    private String tipo;
     private String classe;
-	private String tipo;
+    public void setClasse(String classe){
+    	this.classe = classe;
+    }
+    	
+   	public String getClasse(){
+    	return nivel;
+   	}
+    	
+	/*
+	private String nivel;
+	
+	public void setNivel(String level){
+	this.level = level;
+	}
+	
+	public String getNivel(){
+	return nivel;
+	}
+	*/
 	
 	public String getTipo(){
 		return tipo;
@@ -949,20 +976,11 @@ class Herois extends Personagem{
 	public void setTipo(String tipo){
 		this.tipo = tipo;
 	}
-	
-    public String getClasse(){
-    	return classe;
-    }
-    
-    public void setClasse(String classe){
-    	this.classe = classe;
-    }
 }
 
 class Mago extends Herois{
 	
 }
-
 
 class Arqueiro extends Herois{
 	
