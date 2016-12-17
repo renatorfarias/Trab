@@ -37,8 +37,9 @@ public class Prova {
             
             while(true){
             	JOptionPane.showMessageDialog(null, "Sua vez de jogar");
-            	Object[] golpesDoHeroi= {mago.getNomeGolpePrimario(), mago.getNomeGolpeSecundario(), mago.getNomeDoEspecial()};
-            	habilidade = JOptionPane.showOptionDialog(null, "Selecione o ataque:", "Usar o golpe", JOptionPane.DEFAULT_OPTION, 3, null, golpesDoHeroi, golpesDoHeroi[1]);
+            	Object[] golpesDoHeroi= {(mago.getNomeGolpePrimario()), (mago.getNomeGolpeSecundario()), (mago.getNomeDoEspecial())};
+            	habilidade = JOptionPane.showOptionDialog(null, "Selecione o ataque:", "Usar o golpe", JOptionPane.DEFAULT_OPTION, 3, null, golpesDoHeroi, golpesDoHeroi[0]);
+            	
             	if(habilidade == 0){ //Comparação: se a habilidade secelcionada for o golpe primário
             		mago.golpePrimario(); //Comparação: se a habilidade secelcionada for o golpe primário
             	} else if (habilidade == 1){ ////Comparação: se a habilidade secelcionada for o golpe secundário
