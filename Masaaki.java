@@ -39,14 +39,21 @@ public class Prova {
             while(true){
             	JOptionPane.showMessageDialog(null, "Sua vez de jogar");
             	Object[] golpesDoHeroi= {(mago.getNomeGolpePrimario()), (mago.getNomeGolpeSecundario()), (mago.getNomeDoEspecial())};
-            	habilidade = JOptionPane.showOptionDialog(null, "Selecione o ataque:", "Usar o golpe", JOptionPane.DEFAULT_OPTION, 3, null, golpesDoHeroi, golpesDoHeroi[0]);
-            	
+            	Object[] golpesDoHeroiSEspecial = {(mago.getNomeGolpePrimario()), (mago.getNomeGolpeSecundario())};
+            	if(countH >= 2){
+            		habilidade = JOptionPane.showOptionDialog(null, "Selecione o ataque:", "Usar o golpe", JOptionPane.DEFAULT_OPTION, 3, null, golpesDoHeroi, golpesDoHeroi[0]);
+            	} else {
+            		habilidade = JOptionPane.showOptionDialog(null, "Selecione o ataque:", "Usar o golpe", JOptionPane.DEFAULT_OPTION, 3, null, golpesDoHeroiSEspecial, golpesDoHeroiSEspecial[0]);
+            	}
             	if(habilidade == 0){ //Comparação: se a habilidade secelcionada for o golpe primário
             		mago.golpePrimario(); //Comparação: se a habilidade secelcionada for o golpe primário
+            		countH++;//contador para disponibilizar o uso do poder especial
             	} else if (habilidade == 1){ ////Comparação: se a habilidade secelcionada for o golpe secundário
             		mago.golpeSecundario(); //Se aplica o método golpePrimario()
+            		countH++;
             	} else if (habilidade == 2){ ////Comparação: se a habilidade secelcionada for o golpe ultimate
             		mago.golpeEspecial(); //Se aplica o método golpeUltimate()
+            		countH = 0;
             	}
             	
                	if(mago.getVida() <= 0){
@@ -119,15 +126,22 @@ public class Prova {
            	while(true){
            		JOptionPane.showMessageDialog(null, "Sua vez de jogar");
            		Object[] golpesDoHeroi= {(mago.getNomeGolpePrimario()), (mago.getNomeGolpeSecundario()), (mago.getNomeDoEspecial())};
-           		habilidade = JOptionPane.showOptionDialog(null, "Selecione o ataque:", "Usar o golpe", JOptionPane.DEFAULT_OPTION, 3, null, golpesDoHeroi, golpesDoHeroi[0]);
-           		
-           		if(habilidade == 0){ //Comparação: se a habilidade secelcionada for o golpe primário
-           			mago.golpePrimario(); //Comparação: se a habilidade secelcionada for o golpe primário
-           		} else if (habilidade == 1){ ////Comparação: se a habilidade secelcionada for o golpe secundário
-           			mago.golpeSecundario(); //Se aplica o método golpePrimario()
-           		} else if (habilidade == 2){ ////Comparação: se a habilidade secelcionada for o golpe ultimate
-           			mago.golpeEspecial(); //Se aplica o método golpeUltimate()
-           		}
+            	Object[] golpesDoHeroiSEspecial = {(mago.getNomeGolpePrimario()), (mago.getNomeGolpeSecundario())};
+            	if(countH >= 2){
+            		habilidade = JOptionPane.showOptionDialog(null, "Selecione o ataque:", "Usar o golpe", JOptionPane.DEFAULT_OPTION, 3, null, golpesDoHeroi, golpesDoHeroi[0]);
+            	} else {
+            		habilidade = JOptionPane.showOptionDialog(null, "Selecione o ataque:", "Usar o golpe", JOptionPane.DEFAULT_OPTION, 3, null, golpesDoHeroiSEspecial, golpesDoHeroiSEspecial[0]);
+            	}
+            	if(habilidade == 0){ //Comparação: se a habilidade secelcionada for o golpe primário
+            		mago.golpePrimario(); //Comparação: se a habilidade secelcionada for o golpe primário
+            		countH++;//contador para disponibilizar o uso do poder especial
+            	} else if (habilidade == 1){ ////Comparação: se a habilidade secelcionada for o golpe secundário
+            		mago.golpeSecundario(); //Se aplica o método golpePrimario()
+            		countH++;
+            	} else if (habilidade == 2){ ////Comparação: se a habilidade secelcionada for o golpe ultimate
+            		mago.golpeEspecial(); //Se aplica o método golpeUltimate()
+            		countH = 0;
+            	}
            		
            		if(mago.getVida() <= 0){
            			a = 0;
@@ -199,15 +213,22 @@ public class Prova {
            	while(true){
            		JOptionPane.showMessageDialog(null, "Sua vez de jogar");
            		Object[] golpesDoHeroi= {(mago.getNomeGolpePrimario()), (mago.getNomeGolpeSecundario()), (mago.getNomeDoEspecial())};
-           		habilidade = JOptionPane.showOptionDialog(null, "Selecione o ataque:", "Usar o golpe", JOptionPane.DEFAULT_OPTION, 3, null, golpesDoHeroi, golpesDoHeroi[0]);
-           		
-           		if(habilidade == 0){ //Comparação: se a habilidade secelcionada for o golpe primário
-           			mago.golpePrimario(); //Comparação: se a habilidade secelcionada for o golpe primário
-           		} else if (habilidade == 1){ ////Comparação: se a habilidade secelcionada for o golpe secundário
-           			mago.golpeSecundario(); //Se aplica o método golpePrimario()
-           		} else if (habilidade == 2){ ////Comparação: se a habilidade secelcionada for o golpe ultimate
-           			mago.golpeEspecial(); //Se aplica o método golpeUltimate()
-           		}
+            	Object[] golpesDoHeroiSEspecial = {(mago.getNomeGolpePrimario()), (mago.getNomeGolpeSecundario())};
+            	if(countH >= 2){
+            		habilidade = JOptionPane.showOptionDialog(null, "Selecione o ataque:", "Usar o golpe", JOptionPane.DEFAULT_OPTION, 3, null, golpesDoHeroi, golpesDoHeroi[0]);
+            	} else {
+            		habilidade = JOptionPane.showOptionDialog(null, "Selecione o ataque:", "Usar o golpe", JOptionPane.DEFAULT_OPTION, 3, null, golpesDoHeroiSEspecial, golpesDoHeroiSEspecial[0]);
+            	}
+            	if(habilidade == 0){ //Comparação: se a habilidade secelcionada for o golpe primário
+            		mago.golpePrimario(); //Comparação: se a habilidade secelcionada for o golpe primário
+            		countH++;//contador para disponibilizar o uso do poder especial
+            	} else if (habilidade == 1){ ////Comparação: se a habilidade secelcionada for o golpe secundário
+            		mago.golpeSecundario(); //Se aplica o método golpePrimario()
+            		countH++;
+            	} else if (habilidade == 2){ ////Comparação: se a habilidade secelcionada for o golpe ultimate
+            		mago.golpeEspecial(); //Se aplica o método golpeUltimate()
+            		countH = 0;
+            	}
            		
            		if(mago.getVida() <= 0){
            			a = 0;
@@ -270,6 +291,8 @@ public class Prova {
        		//	JOptionPane.showMessageDialog(null, "//frase de derrota do dragão"
            		Object[] tentarNovamente = {"Sim", "Desistir"};
            		option = JOptionPane.showOptionDialog(null, "E então?", "Novo jogo?", JOptionPane.DEFAULT_OPTION, 3, null, tentarNovamente, tentarNovamente[0]);
+           
+//Falta a ajeitar para reiniciar o game
            	}
            	
         }
@@ -285,14 +308,21 @@ public class Prova {
             while(true){
             	JOptionPane.showMessageDialog(null, "Sua vez de jogar");
             	Object[] golpesDoHeroi= {(guerreiro.getNomeGolpePrimario()), (guerreiro.getNomeGolpeSecundario()), (guerreiro.getNomeDoEspecial())};
-            	habilidade = JOptionPane.showOptionDialog(null, "Selecione o ataque:", "Usar o golpe", JOptionPane.DEFAULT_OPTION, 3, null, golpesDoHeroi, golpesDoHeroi[0]);
-            	
+            	Object[] golpesDoHeroiSEspecial = {(guerreiro.getNomeGolpePrimario()), (guerreiro.getNomeGolpeSecundario())};
+            	if(countH >= 2){
+            		habilidade = JOptionPane.showOptionDialog(null, "Selecione o ataque:", "Usar o golpe", JOptionPane.DEFAULT_OPTION, 3, null, golpesDoHeroi, golpesDoHeroi[0]);
+            	} else {
+            		habilidade = JOptionPane.showOptionDialog(null, "Selecione o ataque:", "Usar o golpe", JOptionPane.DEFAULT_OPTION, 3, null, golpesDoHeroiSEspecial, golpesDoHeroiSEspecial[0]);
+            	}
             	if(habilidade == 0){ //Comparação: se a habilidade secelcionada for o golpe primário
             		guerreiro.golpePrimario(); //Comparação: se a habilidade secelcionada for o golpe primário
+            		countH++;//contador para disponibilizar o uso do poder especial
             	} else if (habilidade == 1){ ////Comparação: se a habilidade secelcionada for o golpe secundário
             		guerreiro.golpeSecundario(); //Se aplica o método golpePrimario()
+            		countH++;
             	} else if (habilidade == 2){ ////Comparação: se a habilidade secelcionada for o golpe ultimate
             		guerreiro.golpeEspecial(); //Se aplica o método golpeUltimate()
+            		countH = 0;
             	}
             	
                	if(guerreiro.getVida() <= 0){
@@ -365,15 +395,22 @@ public class Prova {
            	while(true){
            		JOptionPane.showMessageDialog(null, "Sua vez de jogar");
            		Object[] golpesDoHeroi= {(guerreiro.getNomeGolpePrimario()), (guerreiro.getNomeGolpeSecundario()), (guerreiro.getNomeDoEspecial())};
-           		habilidade = JOptionPane.showOptionDialog(null, "Selecione o ataque:", "Usar o golpe", JOptionPane.DEFAULT_OPTION, 3, null, golpesDoHeroi, golpesDoHeroi[0]);
-           		
-           		if(habilidade == 0){ //Comparação: se a habilidade secelcionada for o golpe primário
-           			guerreiro.golpePrimario(); //Comparação: se a habilidade secelcionada for o golpe primário
-           		} else if (habilidade == 1){ ////Comparação: se a habilidade secelcionada for o golpe secundário
-           			guerreiro.golpeSecundario(); //Se aplica o método golpePrimario()
-           		} else if (habilidade == 2){ ////Comparação: se a habilidade secelcionada for o golpe ultimate
-           			guerreiro.golpeEspecial(); //Se aplica o método golpeUltimate()
-           		}
+            	Object[] golpesDoHeroiSEspecial = {(guerreiro.getNomeGolpePrimario()), (guerreiro.getNomeGolpeSecundario())};
+            	if(countH >= 2){
+            		habilidade = JOptionPane.showOptionDialog(null, "Selecione o ataque:", "Usar o golpe", JOptionPane.DEFAULT_OPTION, 3, null, golpesDoHeroi, golpesDoHeroi[0]);
+            	} else {
+            		habilidade = JOptionPane.showOptionDialog(null, "Selecione o ataque:", "Usar o golpe", JOptionPane.DEFAULT_OPTION, 3, null, golpesDoHeroiSEspecial, golpesDoHeroiSEspecial[0]);
+            	}
+            	if(habilidade == 0){ //Comparação: se a habilidade secelcionada for o golpe primário
+            		guerreiro.golpePrimario(); //Comparação: se a habilidade secelcionada for o golpe primário
+            		countH++;//contador para disponibilizar o uso do poder especial
+            	} else if (habilidade == 1){ ////Comparação: se a habilidade secelcionada for o golpe secundário
+            		guerreiro.golpeSecundario(); //Se aplica o método golpePrimario()
+            		countH++;
+            	} else if (habilidade == 2){ ////Comparação: se a habilidade secelcionada for o golpe ultimate
+            		guerreiro.golpeEspecial(); //Se aplica o método golpeUltimate()
+            		countH = 0;
+            	}
            		
            		if(guerreiro.getVida() <= 0){
            			a = 0;
@@ -445,15 +482,22 @@ public class Prova {
            	while(true){
            		JOptionPane.showMessageDialog(null, "Sua vez de jogar");
            		Object[] golpesDoHeroi= {(guerreiro.getNomeGolpePrimario()), (guerreiro), (guerreiro.getNomeDoEspecial())};
-           		habilidade = JOptionPane.showOptionDialog(null, "Selecione o ataque:", "Usar o golpe", JOptionPane.DEFAULT_OPTION, 3, null, golpesDoHeroi, golpesDoHeroi[0]);
-           		
-           		if(habilidade == 0){ //Comparação: se a habilidade secelcionada for o golpe primário
-           			guerreiro.golpePrimario(); //Comparação: se a habilidade secelcionada for o golpe primário
-           		} else if (habilidade == 1){ ////Comparação: se a habilidade secelcionada for o golpe secundário
-           			guerreiro.golpeSecundario(); //Se aplica o método golpePrimario()
-           		} else if (habilidade == 2){ ////Comparação: se a habilidade secelcionada for o golpe ultimate
-           			guerreiro.golpeEspecial(); //Se aplica o método golpeUltimate()
-           		}
+            	Object[] golpesDoHeroiSEspecial = {(guerreiro.getNomeGolpePrimario()), (guerreiro.getNomeGolpeSecundario())};
+            	if(countH >= 2){
+            		habilidade = JOptionPane.showOptionDialog(null, "Selecione o ataque:", "Usar o golpe", JOptionPane.DEFAULT_OPTION, 3, null, golpesDoHeroi, golpesDoHeroi[0]);
+            	} else {
+            		habilidade = JOptionPane.showOptionDialog(null, "Selecione o ataque:", "Usar o golpe", JOptionPane.DEFAULT_OPTION, 3, null, golpesDoHeroiSEspecial, golpesDoHeroiSEspecial[0]);
+            	}
+            	if(habilidade == 0){ //Comparação: se a habilidade secelcionada for o golpe primário
+            		guerreiro.golpePrimario(); //Comparação: se a habilidade secelcionada for o golpe primário
+            		countH++;//contador para disponibilizar o uso do poder especial
+            	} else if (habilidade == 1){ ////Comparação: se a habilidade secelcionada for o golpe secundário
+            		guerreiro.golpeSecundario(); //Se aplica o método golpePrimario()
+            		countH++;
+            	} else if (habilidade == 2){ ////Comparação: se a habilidade secelcionada for o golpe ultimate
+            		guerreiro.golpeEspecial(); //Se aplica o método golpeUltimate()
+            		countH = 0;
+            	}
         	
            		if(guerreiro.getVida() <= 0){
            			a = 0;
@@ -531,14 +575,21 @@ public class Prova {
             while(true){
             	JOptionPane.showMessageDialog(null, "Sua vez de jogar");
             	Object[] golpesDoHeroi= {(arqueiro.getNomeGolpePrimario()), (arqueiro.getNomeGolpeSecundario()), (arqueiro.getNomeDoEspecial())};
-            	habilidade = JOptionPane.showOptionDialog(null, "Selecione o ataque:", "Usar o golpe", JOptionPane.DEFAULT_OPTION, 3, null, golpesDoHeroi, golpesDoHeroi[0]);
-            	
+            	Object[] golpesDoHeroiSEspecial = {(arqueiro.getNomeGolpePrimario()), (arqueiro.getNomeGolpeSecundario())};
+            	if(countH >= 2){
+            		habilidade = JOptionPane.showOptionDialog(null, "Selecione o ataque:", "Usar o golpe", JOptionPane.DEFAULT_OPTION, 3, null, golpesDoHeroi, golpesDoHeroi[0]);
+            	} else {
+            		habilidade = JOptionPane.showOptionDialog(null, "Selecione o ataque:", "Usar o golpe", JOptionPane.DEFAULT_OPTION, 3, null, golpesDoHeroiSEspecial, golpesDoHeroiSEspecial[0]);
+            	}
             	if(habilidade == 0){ //Comparação: se a habilidade secelcionada for o golpe primário
             		arqueiro.golpePrimario(); //Comparação: se a habilidade secelcionada for o golpe primário
+            		countH++;//contador para disponibilizar o uso do poder especial
             	} else if (habilidade == 1){ ////Comparação: se a habilidade secelcionada for o golpe secundário
             		arqueiro.golpeSecundario(); //Se aplica o método golpePrimario()
+            		countH++;
             	} else if (habilidade == 2){ ////Comparação: se a habilidade secelcionada for o golpe ultimate
             		arqueiro.golpeEspecial(); //Se aplica o método golpeUltimate()
+            		countH = 0;
             	}
             	
                	if(arqueiro.getVida() <= 0){
@@ -611,15 +662,22 @@ public class Prova {
            	while(true){
            		JOptionPane.showMessageDialog(null, "Sua vez de jogar");
            		Object[] golpesDoHeroi= {(arqueiro.getNomeGolpePrimario()), (arqueiro.getNomeGolpeSecundario()), (arqueiro.getNomeDoEspecial())};
-           		habilidade = JOptionPane.showOptionDialog(null, "Selecione o ataque:", "Usar o golpe", JOptionPane.DEFAULT_OPTION, 3, null, golpesDoHeroi, golpesDoHeroi[0]);
-        	
-           		if(habilidade == 0){ //Comparação: se a habilidade secelcionada for o golpe primário
-           			arqueiro.golpePrimario(); //Comparação: se a habilidade secelcionada for o golpe primário
-           		} else if (habilidade == 1){ ////Comparação: se a habilidade secelcionada for o golpe secundário
-           			arqueiro.golpeSecundario(); //Se aplica o método golpePrimario()
-           		} else if (habilidade == 2){ ////Comparação: se a habilidade secelcionada for o golpe ultimate
-           			arqueiro.golpeEspecial(); //Se aplica o método golpeUltimate()
-           		}
+            	Object[] golpesDoHeroiSEspecial = {(arqueiro.getNomeGolpePrimario()), (arqueiro.getNomeGolpeSecundario())};
+            	if(countH >= 2){
+            		habilidade = JOptionPane.showOptionDialog(null, "Selecione o ataque:", "Usar o golpe", JOptionPane.DEFAULT_OPTION, 3, null, golpesDoHeroi, golpesDoHeroi[0]);
+            	} else {
+            		habilidade = JOptionPane.showOptionDialog(null, "Selecione o ataque:", "Usar o golpe", JOptionPane.DEFAULT_OPTION, 3, null, golpesDoHeroiSEspecial, golpesDoHeroiSEspecial[0]);
+            	}
+            	if(habilidade == 0){ //Comparação: se a habilidade secelcionada for o golpe primário
+            		arqueiro.golpePrimario(); //Comparação: se a habilidade secelcionada for o golpe primário
+            		countH++;//contador para disponibilizar o uso do poder especial
+            	} else if (habilidade == 1){ ////Comparação: se a habilidade secelcionada for o golpe secundário
+            		arqueiro.golpeSecundario(); //Se aplica o método golpePrimario()
+            		countH++;
+            	} else if (habilidade == 2){ ////Comparação: se a habilidade secelcionada for o golpe ultimate
+            		arqueiro.golpeEspecial(); //Se aplica o método golpeUltimate()
+            		countH = 0;
+            	}
            		
            		if(arqueiro.getVida() <= 0){
            			a = 0;
@@ -691,15 +749,22 @@ public class Prova {
            	while(true){
            		JOptionPane.showMessageDialog(null, "Sua vez de jogar");
            		Object[] golpesDoHeroi= {(arqueiro.getNomeGolpePrimario()), (arqueiro.getNomeGolpeSecundario()), (arqueiro.getNomeDoEspecial())};
-           		habilidade = JOptionPane.showOptionDialog(null, "Selecione o ataque:", "Usar o golpe", JOptionPane.DEFAULT_OPTION, 3, null, golpesDoHeroi, golpesDoHeroi[0]);
-           		
-           		if(habilidade == 0){ //Comparação: se a habilidade secelcionada for o golpe primário
-           			arqueiro.golpePrimario(); //Comparação: se a habilidade secelcionada for o golpe primário
-           		} else if (habilidade == 1){ ////Comparação: se a habilidade secelcionada for o golpe secundário
-           			arqueiro.golpeSecundario(); //Se aplica o método golpePrimario()
-           		} else if (habilidade == 2){ ////Comparação: se a habilidade secelcionada for o golpe ultimate
-           			arqueiro.golpeEspecial(); //Se aplica o método golpeUltimate()
-        	}
+            	Object[] golpesDoHeroiSEspecial = {(arqueiro.getNomeGolpePrimario()), (arqueiro.getNomeGolpeSecundario())};
+            	if(countH >= 2){
+            		habilidade = JOptionPane.showOptionDialog(null, "Selecione o ataque:", "Usar o golpe", JOptionPane.DEFAULT_OPTION, 3, null, golpesDoHeroi, golpesDoHeroi[0]);
+            	} else {
+            		habilidade = JOptionPane.showOptionDialog(null, "Selecione o ataque:", "Usar o golpe", JOptionPane.DEFAULT_OPTION, 3, null, golpesDoHeroiSEspecial, golpesDoHeroiSEspecial[0]);
+            	}
+            	if(habilidade == 0){ //Comparação: se a habilidade secelcionada for o golpe primário
+            		arqueiro.golpePrimario(); //Comparação: se a habilidade secelcionada for o golpe primário
+            		countH++;//contador para disponibilizar o uso do poder especial
+            	} else if (habilidade == 1){ ////Comparação: se a habilidade secelcionada for o golpe secundário
+            		arqueiro.golpeSecundario(); //Se aplica o método golpePrimario()
+            		countH++;
+            	} else if (habilidade == 2){ ////Comparação: se a habilidade secelcionada for o golpe ultimate
+            		arqueiro.golpeEspecial(); //Se aplica o método golpeUltimate()
+            		countH = 0;
+            	}
            		
            		if(arqueiro.getVida() <= 0){
            			a = 0;
@@ -713,7 +778,8 @@ public class Prova {
            			
            		JOptionPane.showMessageDialog(null, "Rodada do Inimigo...");
            		JOptionPane.showMessageDialog(null, "Eu invoco...");
-           	//	Gambiarra para usar tru Catch
+           		
+           	//	Gambiarra para usar try Catch
            		i 	= rand.nextInt(3);
            		if(countM > 4){
            			switch (i){ //Se countM for maior que 4, o valor de 'i' será verificado para identificar qual ataque foi feito pelo monstro e printá-lo 
@@ -769,16 +835,6 @@ public class Prova {
     }
 }
 	
-
-/*
-        if (escolha == 3) //Podemos colocar mais classes de herois
-            g.setNome("Lennonidas");
-        if (escolha == 4)
-            g.setNome("Maysés");
-        if (escolha == 5)
-            g.setNome("Doisqueixos");
-*/
-
 abstract class Personagem{
     private int ataque, defesa, pontuacao, vida = 10;
     private String nome;
