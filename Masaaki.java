@@ -17,13 +17,15 @@ public class Prova {
         Scanner scan = new Scanner (System.in);
         Monstros dragon = new Dragao(); //Criandi o objeto Dragão
         Monstros gigante = new Gigante(); //Criando o objeto Gigante
-        Monstros bomba = new Moises_Bomba(); //Criando o objeto Bomba
+        Monstros kraken = new Kraken(); //Criando o objeto Bomba
         dragon.setAtaque(rand.nextInt(10)); //valor randomico para a defesa do dragão 
         dragon.setDefesa(rand.nextInt(10)); //valor randomico para a defesa do dragão
         gigante.setAtaque(rand.nextInt(10)); //valor randomico para a defesa do gigante
         gigante.setDefesa(rand.nextInt(10)); //valor randomico para a defesa do gigante
-        bomba.setAtaque(rand.nextInt(10)); //valor randomico para a defesa do bomba
-        bomba.setDefesa(rand.nextInt(10)); //valor randomico para a defesa do bomba
+        kraken.setAtaque(rand.nextInt(10)); //valor randomico para a defesa do bomba
+        kraken.setDefesa(rand.nextInt(10)); //valor randomico para a defesa do bomba
+        JOptionPane.showMessageDialog(null, "Você só possui uma vida");
+        JOptionPane.showMessageDialog(null, "Jogue com sabedoria...");
         Object[] herois = {"Mage", "Tanker", "Arqueiro", "Sniper"};
         escolha = JOptionPane.showOptionDialog(null, "Selecione uma classe para escolher o seu herói", " ", JOptionPane.DEFAULT_OPTION, 3, null,
         		herois, herois[0]);
@@ -46,7 +48,7 @@ public class Prova {
             
             while(true){
             	JOptionPane.showMessageDialog(null, "Sua vez de jogar");
-            	Object[] golpesDoHeroi= {(mago.getNomeGolpePrimario()), (mago.getNomeGolpeSecundario()), (mago.getNomeDoEspecial())};
+            	Object[] golpesDoHeroi= {mago.getNomeGolpePrimario(), mago.getNomeGolpeSecundario(), mago.getNomeDoEspecial()};
             	Object[] golpesDoHeroiSEspecial = {(mago.getNomeGolpePrimario()), (mago.getNomeGolpeSecundario())};
             	if(countH >= 2){
             		habilidade = JOptionPane.showOptionDialog(null, "Selecione o ataque:", "Usar o golpe", JOptionPane.DEFAULT_OPTION, 3, null,
@@ -128,14 +130,14 @@ public class Prova {
            		JOptionPane.showMessageDialog(null, "Vencedor: " + mago.getNome() + "\n" + "\n"+"Ataque: " + mago.getAtaque() + "\n" + "Defesa: " +
            		mago.getDefesa() + "\n" + "Vida: " + mago.getVida() + "*******************************" + "\n" + "Perdedor: " +  dragon.getNome() +
            		"\n" + "Vida: " + dragon.getVida());
-           		//JOptionPane.showMessageDialog(null, "//frase de vitoria do dragão"
+           		JOptionPane.showMessageDialog(null, dragon.getMensagemDeVitoria()); //printar frase de vitória do oponente
            		JOptionPane.showMessageDialog(null, "Parabéns!! \nPróxima fase: " + gigante.getNome());
            		JOptionPane.showMessageDialog(null, "Boa sorte!! \n(Vai precisar...)");
            	} else if(a == 0){ //se 'a' for igual a 0, printar o Monstro como Vencedor da batalha
            		JOptionPane.showMessageDialog(null, "DERROTA!!");
           		JOptionPane.showMessageDialog(null, "Vencedor: " + dragon.getNome() + "n" + "Vida: " + dragon.getVida() +
           				"*******************************" + "\n" + "Perdedor: " +  dragon.getNome() + "\n" + "Vida: " + dragon.getVida());
-           		//JOptionPane.showMessageDialog(null, "//frase de derrota do dragão"
+          		JOptionPane.showMessageDialog(null, dragon.getMensagemDeDerrota()); //printar frase de derrota do oponente
           		Object[] tentarNovamente = {"Sim", "Desistir"};
           		option = JOptionPane.showOptionDialog(null, "E então?", "Novo jogo?", JOptionPane.DEFAULT_OPTION, 3, null, tentarNovamente,
           				tentarNovamente[0]);
@@ -234,14 +236,14 @@ public class Prova {
            		JOptionPane.showMessageDialog(null, "Vencedor: " + mago.getNome() + "\n" + "\n"+"Ataque: " + mago.getAtaque() + "\n" + "Defesa: " +
            		mago.getDefesa() + "\n" + "Vida: " + mago.getVida() + "*******************************" + "\n" + "Perdedor: " +  dragon.getNome() +
            		"\n" + "Vida: " + dragon.getVida());
-           		//	JOptionPane.showMessageDialog(null, "//frase de vitoria do dragão"
-           		JOptionPane.showMessageDialog(null, "Parabéns!! \nPróxima fase: " + gigante.getNome());
+           		JOptionPane.showMessageDialog(null, gigante.getMensagemDeVitoria()); //printar frase de vitória do oponente
+           		JOptionPane.showMessageDialog(null, "Parabéns!! \nPróxima fase: " + kraken.getNome());
            		JOptionPane.showMessageDialog(null, "Boa sorte!! \n(Vai precisar...)");
            	} else if(a == 0){ //se 'a' for igual a 0, printar o Monstro como Vencedor da batalha
            		JOptionPane.showMessageDialog(null, "DERROTA!!");
            		JOptionPane.showMessageDialog(null, "Vencedor: " + gigante.getNome() + "n" + "Vida: " + gigante.getVida() +
-           				"*******************************" + "\n" + "Perdedor: " +  dragon.getNome() + "\n" + "Vida: " + dragon.getVida());
-      		//	JOptionPane.showMessageDialog(null, "//frase de derrota do dragão"       	}
+           				"*******************************" + "\n" + "Perdedor: " +  mago.getNome() + "\n" + "Vida: " + mago.getVida());
+           		JOptionPane.showMessageDialog(null, gigante.getMensagemDeDerrota()); //printar frase de derrota do oponente
            		Object[] tentarNovamente = {"Sim", "Desistir"};
            		option = JOptionPane.showOptionDialog(null, "E então?", "Novo jogo?", JOptionPane.DEFAULT_OPTION, 3, null, tentarNovamente,
            				tentarNovamente[0]);
@@ -250,10 +252,10 @@ public class Prova {
            	JOptionPane.showMessageDialog(null, mago.getNome() + "\n" + "Classe: " + mago.getClasse() + "\n"  + "Tipo de Dano: " + mago.getTipo() +
            			"\n" + "Vida: " + mago.getVida() + "\n" + "Ataque: " + mago.getAtaque() + "\n" + "Defesa: " + mago.getDefesa() + "\n" +
            			"Habilidade Primária: " + mago.getNomeGolpePrimario() + "\n" + "Habilidade Secundária: " + mago.getNomeGolpeSecundario() +
-           			"\n" + "Ultimate: " + mago.getNomeDoEspecial() + "\n" + "*******************************" + "\n" + bomba.getNome() + "\n" +
-           			"Ataque: " + bomba.getAtaque() + "\n" + "Defesa: " + bomba.getDefesa() + "\n" + "Habilidade Primária: " +
-           			bomba.getNomeGolpePrimario() + "\n" + "Habilidade Secundária: " + bomba.getNomeGolpeSecundario() + "\n" + "Especial: " +
-           			bomba.getNomeDoEspecial(), "Detalhes da Batalha: ", 1); //printar os atributos do mago e do monstro.
+           			"\n" + "Ultimate: " + mago.getNomeDoEspecial() + "\n" + "*******************************" + "\n" + kraken.getNome() + "\n" +
+           			"Ataque: " + kraken.getAtaque() + "\n" + "Defesa: " + kraken.getDefesa() + "\n" + "Habilidade Primária: " +
+           			kraken.getNomeGolpePrimario() + "\n" + "Habilidade Secundária: " + kraken.getNomeGolpeSecundario() + "\n" + "Especial: " +
+           			kraken.getNomeDoEspecial(), "Detalhes da Batalha: ", 1); //printar os atributos do mago e do monstro.
            	JOptionPane.showMessageDialog(null, "Que comece a batalha!");
            	
            	while(true){
@@ -280,13 +282,13 @@ public class Prova {
            		
            		if(mago.getVida() <= 0){
            			a = 0;
-           			JOptionPane.showMessageDialog(null, mago.getNome() + "\n" + "Vida: " + mago.getVida() + "\n" + bomba.getNome() + "\n" +
-           			"Vida: " + bomba.getVida());
+           			JOptionPane.showMessageDialog(null, mago.getNome() + "\n" + "Vida: " + mago.getVida() + "\n" + kraken.getNome() + "\n" +
+           			"Vida: " + kraken.getVida());
            			break; //Quebra o while(true) da linha 213
            		} else if (gigante.getVida() <= 0){
            			a = 1;
-           			JOptionPane.showMessageDialog(null, mago.getNome() + "\n" + "Vida: " + mago.getVida() + "\n" + bomba.getNome() + "\n" +
-           			"Vida: " + bomba.getVida());
+           			JOptionPane.showMessageDialog(null, mago.getNome() + "\n" + "Vida: " + mago.getVida() + "\n" + kraken.getNome() + "\n" +
+           			"Vida: " + kraken.getVida());
            			break; //Quebra o while(true) da linha 213
            		}
            		
@@ -297,13 +299,13 @@ public class Prova {
            		if(countM > 4){
            			switch (i){
            			//Se countM for maior que 4, o valor de 'i' será verificado para identificar qual ataque foi feito pelo monstro e printá-lo 
-           			case 0: JOptionPane.showMessageDialog(null, bomba.getNomeGolpePrimario()); //Printar o ataque primário
+           			case 0: JOptionPane.showMessageDialog(null, kraken.getNomeGolpePrimario()); //Printar o ataque primário
            					countM++;
            					break;
-           			case 1: JOptionPane.showMessageDialog(null, bomba.getNomeGolpeSecundario()); //Printar o ataque Secundário
+           			case 1: JOptionPane.showMessageDialog(null, kraken.getNomeGolpeSecundario()); //Printar o ataque Secundário
            					countM++;
            					break;
-           			case 2: JOptionPane.showMessageDialog(null, bomba.getNomeDoEspecial()); //Printar o ataque Especial 
+           			case 2: JOptionPane.showMessageDialog(null, kraken.getNomeDoEspecial()); //Printar o ataque Especial 
 							countM++;	
 							break;
            			}
@@ -312,10 +314,10 @@ public class Prova {
            			//Como o especial não poderá ser utilizado, o valor de i terá de ser sorteado novamente, pois não há mais 3 possibilidades de ataque
            			switch (i){
            			//Se countM não for maior que 4, o valor de 'i' será verificado para identificar qual ataque foi feito pelo monstro e printá-lo
-           				case 0: JOptionPane.showMessageDialog(null, bomba.getNomeGolpePrimario()); //Printar o ataque primário
+           				case 0: JOptionPane.showMessageDialog(null, kraken.getNomeGolpePrimario()); //Printar o ataque primário
            						countM++;
            						break;
-           				case 1: JOptionPane.showMessageDialog(null, bomba.getNomeGolpeSecundario()); //Printar o ataque secundário 
+           				case 1: JOptionPane.showMessageDialog(null, kraken.getNomeGolpeSecundario()); //Printar o ataque secundário 
            						countM++;
            						break;
            			}
@@ -324,13 +326,13 @@ public class Prova {
            	                    	
            		if(mago.getVida() <= 0){ //Verficação para saber se a vida está negativa. Nesse caso, se o Herói morreu
            			a = 0;
-           			JOptionPane.showMessageDialog(null, mago.getNome() + "\n" + "Vida: " + mago.getVida() + "\n" + bomba.getNome() + "\n" +
-           			"Vida: " + bomba.getVida());
+           			JOptionPane.showMessageDialog(null, mago.getNome() + "\n" + "Vida: " + mago.getVida() + "\n" + kraken.getNome() + "\n" +
+           			"Vida: " + kraken.getVida());
            			break; //Quebra o while(true) da linha 213
-           		} else if (bomba.getVida() <= 0){ //Verficação para saber se a vida está negativa. Nesse caso, se o Monstro morreu
+           		} else if (kraken.getVida() <= 0){ //Verficação para saber se a vida está negativa. Nesse caso, se o Monstro morreu
            			a = 1;
-           			JOptionPane.showMessageDialog(null, mago.getNome() + "\n" + "Vida: " + mago.getVida() + "\n" + bomba.getNome() + "\n" +
-           			"Vida: " + bomba.getVida());
+           			JOptionPane.showMessageDialog(null, mago.getNome() + "\n" + "Vida: " + mago.getVida() + "\n" + kraken.getNome() + "\n" +
+           			"Vida: " + kraken.getVida());
            			break; //Quebra o while(true) da linha 213
            		}
            	}	        
@@ -339,14 +341,14 @@ public class Prova {
            		JOptionPane.showMessageDialog(null, "Vencedor: " + mago.getNome() + "\n" + "\n"+"Ataque: " + mago.getAtaque() + "\n" + "Defesa: " +
            		mago.getDefesa() + "\n" + "Vida: " + mago.getVida() + "*******************************" + "\n" + "Perdedor: " +  dragon.getNome() +
            		"\n" + "Vida: " + dragon.getVida());
-       		//	JOptionPane.showMessageDialog(null, "//frase de vitoria do dragão"
-           		JOptionPane.showMessageDialog(null, "Parabéns!! \nPróxima fase: " + bomba.getNome());
-           		JOptionPane.showMessageDialog(null, "Boa sorte!! \n(Vai precisar...)");
+           		JOptionPane.showMessageDialog(null, kraken.getMensagemDeVitoria()); //printar frase de vitória do oponente
+           		JOptionPane.showMessageDialog(null, "Congratulations");
+           		JOptionPane.showMessageDialog(null, "You has finished this game. You are the best player of the UFPA");
            	} else if(a == 0){ //se 'a' for igual a 0, printar o Monstro como Vencedor da batalha
            		JOptionPane.showMessageDialog(null, "DERROTA!!");
-           		JOptionPane.showMessageDialog(null, "Vencedor: " + bomba.getNome() + "n" + "Vida: " + bomba.getVida() +
-           				"*******************************" + "\n" + "Perdedor: " +  bomba.getNome() + "\n" + "Vida: " + bomba.getVida());
-       		//	JOptionPane.showMessageDialog(null, "//frase de derrota do dragão"
+           		JOptionPane.showMessageDialog(null, "Vencedor: " + kraken.getNome() + "n" + "Vida: " + kraken.getVida() +
+           				"*******************************" + "\n" + "Perdedor: " +  kraken.getNome() + "\n" + "Vida: " + kraken.getVida());
+           		JOptionPane.showMessageDialog(null, kraken.getMensagemDeDerrota()); //printar frase de derrota do oponente
            		Object[] tentarNovamente = {"Sim", "Desistir"};
            		option = JOptionPane.showOptionDialog(null, "E então?", "Novo jogo?", JOptionPane.DEFAULT_OPTION, 3, null, tentarNovamente,
            				tentarNovamente[0]);
@@ -443,7 +445,7 @@ public class Prova {
             	if(guerreiro.getVida() <= 0){ //Verficação para saber se a vida está negativa. Nesse caso, se o Herói morreu
                     a = 0;
                     JOptionPane.showMessageDialog(null, guerreiro.getNome() + "\n" + "Vida: " + guerreiro.getVida() + "\n" + dragon.getNome() + 
-                    		\n" + "Vida: " + dragon.getVida());
+                    		"\n" + "Vida: " + dragon.getVida());
                     break;
             	} else if (dragon.getVida() <= 0){ //Verficação para saber se a vida está negativa. Nesse caso, se o Monstro morreu
                     a = 1;
@@ -458,14 +460,14 @@ public class Prova {
            		JOptionPane.showMessageDialog(null, "Vencedor: " + guerreiro.getNome() + "\n" + "\n"+"Ataque: " + guerreiro.getAtaque() + "\n" +
            		"Defesa: " + guerreiro.getDefesa() + "\n" + "Vida: " + guerreiro.getVida() + "*******************************" + "\n" +
            				"Perdedor: " +  dragon.getNome() + "\n" + "Vida: " + dragon.getVida());
-           		//JOptionPane.showMessageDialog(null, "//frase de vitoria do dragão"
+           		JOptionPane.showMessageDialog(null, dragon.getMensagemDeVitoria()); //printar frase de vitória do oponente
            		JOptionPane.showMessageDialog(null, "Parabéns!! \nPróxima fase: " + gigante.getNome());
            		JOptionPane.showMessageDialog(null, "Boa sorte!! \n(Vai precisar...)");
            	} else if(a == 0){ //se 'a' for igual a 0, printar o Monstro como Vencedor da batalha
            		JOptionPane.showMessageDialog(null, "DERROTA!!");
           		JOptionPane.showMessageDialog(null, "Vencedor: " + dragon.getNome() + "n" + "Vida: " + dragon.getVida() +
           				"*******************************" + "\n" + "Perdedor: " +  dragon.getNome() + "\n" + "Vida: " + dragon.getVida());
-           		//JOptionPane.showMessageDialog(null, "//frase de derrota do dragão"
+          		JOptionPane.showMessageDialog(null, dragon.getMensagemDeDerrota()); //printar frase de derrota do oponente
           		Object[] tentarNovamente = {"Sim", "Desistir"};
           		option = JOptionPane.showOptionDialog(null, "E então?", "Novo jogo?", JOptionPane.DEFAULT_OPTION, 3, null, tentarNovamente,
           				tentarNovamente[0]);
@@ -564,14 +566,14 @@ public class Prova {
            		JOptionPane.showMessageDialog(null, "Vencedor: " + guerreiro.getNome() + "\n" + "\n"+"Ataque: " + guerreiro.getAtaque() + "\n" +
            		"Defesa: " + guerreiro.getDefesa() + "\n" + "Vida: " + guerreiro.getVida() + "*******************************" + "\n" +
            				"Perdedor: " +  dragon.getNome() + "\n" + "Vida: " + dragon.getVida());
-           		//JOptionPane.showMessageDialog(null, "//frase de vitoria do dragão"
-           		JOptionPane.showMessageDialog(null, "Parabéns!! \nPróxima fase: " + gigante.getNome());
+           		JOptionPane.showMessageDialog(null, gigante.getMensagemDeVitoria()); //printar frase de vitória do oponente.
+           		JOptionPane.showMessageDialog(null, "Parabéns!! \nPróxima fase: " + kraken.getNome());
            		JOptionPane.showMessageDialog(null, "Boa sorte!! \n(Vai precisar...)");
            		} else if(a == 0){ //se 'a' for igual a 0, printar o Monstro como Vencedor da batalha
            			JOptionPane.showMessageDialog(null, "DERROTA!!");
            			JOptionPane.showMessageDialog(null, "Vencedor: " + gigante.getNome() + "n" + "Vida: " + gigante.getVida() +
            					"*******************************" + "\n" + "Perdedor: " +  dragon.getNome() + "\n" + "Vida: " + dragon.getVida());
-           		//	JOptionPane.showMessageDialog(null, "//frase de derrota do dragão"       	}
+           			JOptionPane.showMessageDialog(null, gigante.getMensagemDeDerrota()); //printar frase de derrota do oponente.
            			Object	[] tentarNovamente = {"Sim", "Desistir"};
            			option = JOptionPane.showOptionDialog(null, "E então?", "Novo jogo?", JOptionPane.DEFAULT_OPTION, 3, null, tentarNovamente,
            					tentarNovamente[0]);
@@ -581,9 +583,9 @@ public class Prova {
            	guerreiro.getTipo() + "\n" + "Vida: " + guerreiro.getVida() + "\n" + "Ataque: " + guerreiro.getAtaque() + "\n" + "Defesa: " +
            			guerreiro.getDefesa() + "\n" + "Habilidade Primária: " + guerreiro.getNomeGolpePrimario() + "\n" + "Habilidade Secundária: " +
            	guerreiro.getNomeGolpeSecundario() + "\n" + "Ultimate: " + guerreiro.getNomeDoEspecial() + "\n" + "*******************************" +
-           			"\n" + bomba.getNome() + "\n" + "Ataque: " + bomba.getAtaque() + "\n" + "Defesa: " + bomba.getDefesa() + "\n" +
-           	"Habilidade Primária: " + bomba.getNomeGolpePrimario() + "\n" + "Habilidade Secundária: " + bomba.getNomeGolpeSecundario() + "\n" +
-           			"Especial: " + bomba.getNomeDoEspecial(), "Detalhes da Batalha: ", 1); //printar os atributos do mago e do monstro.
+           			"\n" + kraken.getNome() + "\n" + "Ataque: " + kraken.getAtaque() + "\n" + "Defesa: " + kraken.getDefesa() + "\n" +
+           	"Habilidade Primária: " + kraken.getNomeGolpePrimario() + "\n" + "Habilidade Secundária: " + kraken.getNomeGolpeSecundario() + "\n" +
+           			"Especial: " + kraken.getNomeDoEspecial(), "Detalhes da Batalha: ", 1); //printar os atributos do mago e do monstro.
            	JOptionPane.showMessageDialog(null, "Que comece a batalha!");
         	
            	while(true){
@@ -610,13 +612,13 @@ public class Prova {
         	
            		if(guerreiro.getVida() <= 0){
            			a = 0;
-           			JOptionPane.showMessageDialog(null, guerreiro.getNome() + "\n" + "Vida: " + guerreiro.getVida() + "\n" + bomba.getNome() +
-           					"\n" + "Vida: " + bomba.getVida());
+           			JOptionPane.showMessageDialog(null, guerreiro.getNome() + "\n" + "Vida: " + guerreiro.getVida() + "\n" + kraken.getNome() +
+           					"\n" + "Vida: " + kraken.getVida());
            			break; //Quebra o while(true) da linha 396
            		} else if (gigante.getVida() <= 0){
            			a = 1;
-           			JOptionPane.showMessageDialog(null, guerreiro.getNome() + "\n" + "Vida: " + guerreiro.getVida() + "\n" + bomba.getNome() +
-           					"\n" + "Vida: " + bomba.getVida());
+           			JOptionPane.showMessageDialog(null, guerreiro.getNome() + "\n" + "Vida: " + guerreiro.getVida() + "\n" + kraken.getNome() +
+           					"\n" + "Vida: " + kraken.getVida());
            			break; //Quebra o while(true) da linha 483
            		}
 
@@ -627,13 +629,13 @@ public class Prova {
            		if(countM > 4){
            			switch (i){
            			//Se countM for maior que 4, o valor de 'i' será verificado para identificar qual ataque foi feito pelo monstro e printá-lo 
-           				case 0: JOptionPane.showMessageDialog(null, bomba.getNomeGolpePrimario()); //Printar o ataque primário
+           				case 0: JOptionPane.showMessageDialog(null, kraken.getNomeGolpePrimario()); //Printar o ataque primário
            						countM++;
            						break;
-           				case 1: JOptionPane.showMessageDialog(null, bomba.getNomeGolpeSecundario()); //Printar o ataque Secundário
+           				case 1: JOptionPane.showMessageDialog(null, kraken.getNomeGolpeSecundario()); //Printar o ataque Secundário
            						countM++;
            						break;
-           				case 2: JOptionPane.showMessageDialog(null, bomba.getNomeDoEspecial()); //Printar o ataque Especial 
+           				case 2: JOptionPane.showMessageDialog(null, kraken.getNomeDoEspecial()); //Printar o ataque Especial 
            						countM++;	
 								break;
            			}	
@@ -642,10 +644,10 @@ public class Prova {
            			//Como o especial não poderá ser utilizado, o valor de i terá de ser sorteado novamente, pois não há mais 3 possibilidades de ataque
            			switch (i){
            			//Se countM não for maior que 4, o valor de 'i' será verificado para identificar qual ataque foi feito pelo monstro e printá-lo
-           				case 0: JOptionPane.showMessageDialog(null, bomba.getNomeGolpePrimario()); //Printar o ataque primário
+           				case 0: JOptionPane.showMessageDialog(null, kraken.getNomeGolpePrimario()); //Printar o ataque primário
            						countM++;
            						break;
-           				case 1: JOptionPane.showMessageDialog(null, bomba.getNomeGolpeSecundario()); //Printar o ataque secundário 
+           				case 1: JOptionPane.showMessageDialog(null, kraken.getNomeGolpeSecundario()); //Printar o ataque secundário 
            						countM++;
            						break;
            			}
@@ -654,13 +656,13 @@ public class Prova {
            		
            		if(guerreiro.getVida() <= 0){ //Verficação para saber se a vida está negativa. Nesse caso, se o Herói morreu
            			a = 0;
-           			JOptionPane.showMessageDialog(null, guerreiro.getNome() + "\n" + "Vida: " + guerreiro.getVida() + "\n" + bomba.getNome() +
-           					"\n" + "Vida: " + bomba.getVida());
+           			JOptionPane.showMessageDialog(null, guerreiro.getNome() + "\n" + "Vida: " + guerreiro.getVida() + "\n" + kraken.getNome() +
+           					"\n" + "Vida: " + kraken.getVida());
            			break; //Quebra o while(true) da linha 396
-           		} else if (bomba.getVida() <= 0){ //Verficação para saber se a vida está negativa. Nesse caso, se o Monstro morreu
+           		} else if (kraken.getVida() <= 0){ //Verficação para saber se a vida está negativa. Nesse caso, se o Monstro morreu
            			a = 1;
-           			JOptionPane.showMessageDialog(null, guerreiro.getNome() + "\n" + "Vida: " + guerreiro.getVida() + "\n" + bomba.getNome() +
-           					"\n" + "Vida: " + bomba.getVida());
+           			JOptionPane.showMessageDialog(null, guerreiro.getNome() + "\n" + "Vida: " + guerreiro.getVida() + "\n" + kraken.getNome() +
+           					"\n" + "Vida: " + kraken.getVida());
            			break; //Quebra o while(true) da linha 396
            		}	
            	}
@@ -669,15 +671,15 @@ public class Prova {
            		JOptionPane.showMessageDialog(null, "VITÓRIA!!");
            		JOptionPane.showMessageDialog(null, "Vencedor: " + guerreiro.getNome() + "\n" + "\n"+"Ataque: " + guerreiro.getAtaque() +
            				"\n" + "Defesa: " + guerreiro.getDefesa() + "\n" + "Vida: " + guerreiro.getVida() + "*******************************" +
-           				"\n" + "Perdedor: " +  bomba.getNome() + "\n" + "Vida: " + bomba.getVida());
-       		//	JOptionPane.showMessageDialog(null, "//frase de vitoria do dragão"
-           		JOptionPane.showMessageDialog(null, "Parabéns!! \nPróxima fase: " + bomba.getNome());
-           		JOptionPane.showMessageDialog(null, "Boa sorte!! \n(Vai precisar...)");
+           				"\n" + "Perdedor: " +  kraken.getNome() + "\n" + "Vida: " + kraken.getVida());
+       			JOptionPane.showMessageDialog(null, kraken.getMensagemDeVitoria()); //printar frase de vitória do oponente
+           		JOptionPane.showMessageDialog(null, "Congratulations");
+           		JOptionPane.showMessageDialog(null, "You has finished this game. You are the best player of the UFPA");
            	} else if(a == 0){ //se 'a' for igual a 0, printar o Monstro como Vencedor da batalha
            		JOptionPane.showMessageDialog(null, "DERROTA!!");
-           		JOptionPane.showMessageDialog(null, "Vencedor: " + bomba.getNome() + "n" + "Vida: " + bomba.getVida() +
-           				"*******************************" + "\n" + "Perdedor: " +  bomba.getNome() + "\n" + "Vida: " + bomba.getVida());
-       		//	JOptionPane.showMessageDialog(null, "//frase de derrota do dragão"
+           		JOptionPane.showMessageDialog(null, "Vencedor: " + kraken.getNome() + "n" + "Vida: " + kraken.getVida() +
+           				"*******************************" + "\n" + "Perdedor: " +  kraken.getNome() + "\n" + "Vida: " + kraken.getVida());
+           		JOptionPane.showMessageDialog(null, kraken.getMensagemDeDerrota()); //printar frase de derrota do oponente
            		Object[] tentarNovamente = {"Sim", "Desistir"};
            		option = JOptionPane.showOptionDialog(null, "E então?", "Novo jogo?", JOptionPane.DEFAULT_OPTION, 3, null, tentarNovamente, tentarNovamente[0]);
            	}
@@ -782,14 +784,14 @@ public class Prova {
            		JOptionPane.showMessageDialog(null, "Vencedor: " + arqueiro.getNome() + "\n" + "\n"+"Ataque: " + arqueiro.getAtaque() + "\n" +
            				"Defesa: " + arqueiro.getDefesa() + "\n" + "Vida: " + arqueiro.getVida() + "*******************************" + "\n" +
            				"Perdedor: " + dragon.getNome() + "\n" + "Vida: " + dragon.getVida());
-           		JOptionPane.showMessageDialog(null, bomba.getMensagemDeVitoria());
+           		JOptionPane.showMessageDialog(null, dragon.getMensagemDeVitoria()); //printar frase de derrota do oponente
            		JOptionPane.showMessageDialog(null, "Parabéns!! \nPróxima fase: " + gigante.getNome());
            		JOptionPane.showMessageDialog(null, "Boa sorte!! \n(Vai precisar...)");
            	} else if(a == 0){ //se 'a' for igual a 0, printar o Monstro como Vencedor da batalha
            		JOptionPane.showMessageDialog(null, "DERROTA!!");
           		JOptionPane.showMessageDialog(null, "Vencedor: " + dragon.getNome() + "n" + "Vida: " + dragon.getVida() +
           				"*******************************" + "\n" + "Perdedor: " +  dragon.getNome() + "\n" + "Vida: " + dragon.getVida());
-           		//JOptionPane.showMessageDialog(null, "//frase de derrota do dragão"
+          		JOptionPane.showMessageDialog(null, dragon.getMensagemDeDerrota()); //printar frase de derrota do oponente
           		Object[] tentarNovamente = {"Sim", "Desistir"};
           		option = JOptionPane.showOptionDialog(null, "E então?", "Novo jogo?", JOptionPane.DEFAULT_OPTION, 3, null, tentarNovamente,
           				tentarNovamente[0]);
@@ -889,14 +891,14 @@ public class Prova {
            		JOptionPane.showMessageDialog(null, "Vencedor: " + arqueiro.getNome() + "\n" + "\n"+"Ataque: " + arqueiro.getAtaque() +
            				"\n" + "Defesa: " + arqueiro.getDefesa() + "\n" + "Vida: " + arqueiro.getVida() + "*******************************" +
            				"\n" + "Perdedor: " +  dragon.getNome() + "\n" + "Vida: " + dragon.getVida());
-       		//	JOptionPane.showMessageDialog(null, "//frase de vitoria do dragão"
-           		JOptionPane.showMessageDialog(null, "Parabéns!! \nPróxima fase: " + gigante.getNome());
+           		JOptionPane.showMessageDialog(null, gigante.getMensagemDeVitoria()); //printar frase de vitória do oponente
+           		JOptionPane.showMessageDialog(null, "Parabéns!! \nPróxima fase: " + kraken.getNome());
            		JOptionPane.showMessageDialog(null, "Boa sorte!! \n(Vai precisar...)");
            	} else if(a == 0){ //se 'a' for igual a 0, printar o Monstro como Vencedor da batalha
            		JOptionPane.showMessageDialog(null, "DERROTA!!");
            		JOptionPane.showMessageDialog(null, "Vencedor: " + gigante.getNome() + "n" + "Vida: " + gigante.getVida() +
-           				"*******************************" + "\n" + "Perdedor: " +  dragon.getNome() + "\n" + "Vida: " + dragon.getVida());
-           		//JOptionPane.showMessageDialog(null, "//frase de derrota do dragão"       	}
+           				"*******************************" + "\n" + "Perdedor: " +  gigante.getNome() + "\n" + "Vida: " + gigante.getVida());
+           		JOptionPane.showMessageDialog(null, gigante.getMensagemDeDerrota()); //printar frase de derrota do oponente
            		Object	[] tentarNovamente = {"Sim", "Desistir"};
       			option = JOptionPane.showOptionDialog(null, "E então?", "Novo jogo?", JOptionPane.DEFAULT_OPTION, 3, null, tentarNovamente,
       					tentarNovamente[0]);
@@ -906,9 +908,9 @@ public class Prova {
            	arqueiro.getTipo() + "\n" + "Vida: " + arqueiro.getVida() + "\n" + "Ataque: " + arqueiro.getAtaque() + "\n" + "Defesa: " +
            			arqueiro.getDefesa() + "\n" + "Habilidade Primária: " + arqueiro.getNomeGolpePrimario() + "\n" + "Habilidade Secundária: " +
            	arqueiro.getNomeGolpeSecundario() + "\n" + "Ultimate: " + arqueiro.getNomeDoEspecial() + "\n" + "*******************************" +
-           			"\n" + bomba.getNome() + "\n" + "Ataque: " + bomba.getAtaque() + "\n" + "Defesa: " + bomba.getDefesa() + "\n" +
-           	"Habilidade Primária: " + bomba.getNomeGolpePrimario() + "\n" + "Habilidade Secundária: " + bomba.getNomeGolpeSecundario() + "\n" +
-           			"Especial: " + bomba.getNomeDoEspecial(), "Detalhes da Batalha: ", 1); //printar os atributos do mago e do monstro.
+           			"\n" + kraken.getNome() + "\n" + "Ataque: " + kraken.getAtaque() + "\n" + "Defesa: " + kraken.getDefesa() + "\n" +
+           	"Habilidade Primária: " + kraken.getNomeGolpePrimario() + "\n" + "Habilidade Secundária: " + kraken.getNomeGolpeSecundario() + "\n" +
+           			"Especial: " + kraken.getNomeDoEspecial(), "Detalhes da Batalha: ", 1); //printar os atributos do mago e do monstro.
            	JOptionPane.showMessageDialog(null, "Que comece a batalha!");
         
            	while(true){
@@ -935,13 +937,13 @@ public class Prova {
            		
            		if(arqueiro.getVida() <= 0){
            			a = 0;
-                JOptionPane.showMessageDialog(null, arqueiro.getNome() + "\n" + "Vida: " + arqueiro.getVida() + "\n" + bomba.getNome() +
-                		"\n" + "Vida: " + bomba.getVida());
+                JOptionPane.showMessageDialog(null, arqueiro.getNome() + "\n" + "Vida: " + arqueiro.getVida() + "\n" + kraken.getNome() +
+                		"\n" + "Vida: " + kraken.getVida());
                 	break; //Quebra o while(true) da linha 750
            		} else if (gigante.getVida() <= 0){
            			a = 1;
-           			JOptionPane.showMessageDialog(null, arqueiro.getNome() + "\n" + "Vida: " + arqueiro.getVida() + "\n" + bomba.getNome() +
-           					"\n" + "Vida: " + bomba.getVida());
+           			JOptionPane.showMessageDialog(null, arqueiro.getNome() + "\n" + "Vida: " + arqueiro.getVida() + "\n" + kraken.getNome() +
+           					"\n" + "Vida: " + kraken.getVida());
            			break; //Quebra o while(true) da linha 750
            		}
            			
@@ -953,13 +955,13 @@ public class Prova {
            		if(countM > 4){
            			switch (i){
            				//Se countM for maior que 4, o valor de 'i' será verificado para identificar qual ataque foi feito pelo monstro e printá-lo 
-           				case 0: JOptionPane.showMessageDialog(null, bomba.getNomeGolpePrimario()); //Printar o ataque primário
+           				case 0: JOptionPane.showMessageDialog(null, kraken.getNomeGolpePrimario()); //Printar o ataque primário
            						countM++;
            						break;
-           				case 1: JOptionPane.showMessageDialog(null, bomba.getNomeGolpeSecundario()); //Printar o ataque Secundário
+           				case 1: JOptionPane.showMessageDialog(null, kraken.getNomeGolpeSecundario()); //Printar o ataque Secundário
            						countM++;
            						break;
-           				case 2: JOptionPane.showMessageDialog(null, bomba.getNomeDoEspecial()); //Printar o ataque Especial 
+           				case 2: JOptionPane.showMessageDialog(null, kraken.getNomeDoEspecial()); //Printar o ataque Especial 
            						countM++;	
            						break;
            			}
@@ -968,10 +970,10 @@ public class Prova {
            			//Como o especial não poderá ser utilizado, o valor de i terá de ser sorteado novamente, pois não há mais 3 possibilidades de ataque
            			switch (i){
            			//Se countM não for maior que 4, o valor de 'i' será verificado para identificar qual ataque foi feito pelo monstro e printá-lo
-           				case 0: JOptionPane.showMessageDialog(null, bomba.getNomeGolpePrimario()); //Printar o ataque primário
+           				case 0: JOptionPane.showMessageDialog(null, kraken.getNomeGolpePrimario()); //Printar o ataque primário
            						countM++;
            						break;
-           				case 1: JOptionPane.showMessageDialog(null, bomba.getNomeGolpeSecundario()); //Printar o ataque secundário 
+           				case 1: JOptionPane.showMessageDialog(null, kraken.getNomeGolpeSecundario()); //Printar o ataque secundário 
            						countM++;
            						break;
            			}
@@ -980,13 +982,13 @@ public class Prova {
            	                    		
            		if(arqueiro.getVida() <= 0){ //Verficação para saber se a vida está negativa. Nesse caso, se o Herói morreu
            			a = 0;
-           			JOptionPane.showMessageDialog(null, arqueiro.getNome() + "\n" + "Vida: " + arqueiro.getVida() + "\n" + bomba.getNome() +
-           					"\n" + "Vida: " + bomba.getVida());
+           			JOptionPane.showMessageDialog(null, arqueiro.getNome() + "\n" + "Vida: " + arqueiro.getVida() + "\n" + kraken.getNome() +
+           					"\n" + "Vida: " + kraken.getVida());
                 	break; //Quebra o while(true) da linha 750
-           		} else if (bomba.getVida() <= 0){ //Verficação para saber se a vida está negativa. Nesse caso, se o Monstro morreu
+           		} else if (kraken.getVida() <= 0){ //Verficação para saber se a vida está negativa. Nesse caso, se o Monstro morreu
            			a = 1;
-           			JOptionPane.showMessageDialog(null, arqueiro.getNome() + "\n" + "Vida: " + arqueiro.getVida() + "\n" + bomba.getNome() +
-           					"\n" + "Vida: " + bomba.getVida());
+           			JOptionPane.showMessageDialog(null, arqueiro.getNome() + "\n" + "Vida: " + arqueiro.getVida() + "\n" + kraken.getNome() +
+           					"\n" + "Vida: " + kraken.getVida());
            			break; //Quebra o while(true) da linha 750
            		}
            	}	
@@ -995,15 +997,15 @@ public class Prova {
            		JOptionPane.showMessageDialog(null, "VITÓRIA!!");
            		JOptionPane.showMessageDialog(null, "Vencedor: " + arqueiro.getNome() + "\n" + "\n"+"Ataque: " + arqueiro.getAtaque() + "\n" +
            		"Defesa: " + arqueiro.getDefesa() + "\n" + "Vida: " + arqueiro.getVida() + "*******************************" + "\n" + "Perdedor: " +
-           				bomba.getNome() + "\n" + "Vida: " + bomba.getVida());
-       			//	JOptionPane.showMessageDialog(null, "//frase de vitoria do dragão"
-           		JOptionPane.showMessageDialog(null, "Parabéns!! \nPróxima fase: " + bomba.getNome());
-           		JOptionPane.showMessageDialog(null, "Boa sorte!! \n(Vai precisar...)");
+           		kraken.getNome() + "\n" + "Vida: " + kraken.getVida());
+           		JOptionPane.showMessageDialog(null, kraken.getMensagemDeVitoria()); //printar frase de vitória do oponente
+           		JOptionPane.showMessageDialog(null, "Congratulations");
+           		JOptionPane.showMessageDialog(null, "You has finished this game. You are the best player of the UFPA");
            	} else if(a == 0){ //se 'a' for igual a 0, printar o Monstro como Vencedor da batalha
            		JOptionPane.showMessageDialog(null, "DERROTA!!");
-           		JOptionPane.showMessageDialog(null, "Vencedor: " + bomba.getNome() + "n" + "Vida: " + bomba.getVida() +
-           				"*******************************" + "\n" + "Perdedor: " +  bomba.getNome() + "\n" + "Vida: " + bomba.getVida());
-           		JOptionPane.showMessageDialog(null, bomba.getMensagemDeVitoria());
+           		JOptionPane.showMessageDialog(null, "Vencedor: " + kraken.getNome() + "n" + "Vida: " + kraken.getVida() +
+           				"*******************************" + "\n" + "Perdedor: " +  kraken.getNome() + "\n" + "Vida: " + kraken.getVida());
+           		JOptionPane.showMessageDialog(null, kraken.getMensagemDeDerrota()); //printar frase de derrota do oponente
            		Object[] tentarNovamente = {"Sim", "Desistir"};
            		option = JOptionPane.showOptionDialog(null, "E então?", "Novo jogo?", JOptionPane.DEFAULT_OPTION, 3, null, tentarNovamente,
            				tentarNovamente[0]);
@@ -1200,7 +1202,7 @@ class Gigante extends Monstros{
 	}
 }
 
-class Moises_Bomba extends Monstros{
+class Kraken extends Monstros{
 	@Override
 	public String getMensagemDeVitoria(){
 		return "//frase de vitoria";
