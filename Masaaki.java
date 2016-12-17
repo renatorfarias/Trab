@@ -1,17 +1,26 @@
 package prova;
 
-import java.util.Random;import java.util.Scanner;
-import javax.swing.JOptionPane;
-
+import java.util.Random;
+import java.util.Scanner;
+import javax.swing.JOptionPane;;
 public class Prova {
     public static void main(String[] args) {
-    	String classe;
-        int habilidade = 0; //Faz a comparação com o valor inteiro amazenado para saber qual hailidade o herṕi utilizou. Linha 36
+    	LerTxt lertxt = new LerTxt();
+    	CriarTxt criartxt = new CriarTxt();
+    	loginDoJogo login = new loginDoJogo();
+    	lertxt.LerTXT();
+    	criartxt.CriarTXT();
+    	
+    	login.login();
+    	int habilidade = 0;
+         //Faz a comparação com o valor inteiro amazenado para saber qual hailidade o herṕi utilizou. Linha 36
         int escolha; //Variável interia para fazer comparações e saber qual herói o Jogador escolheu. Linha 25 
         int a = 0; //Parâmetro para printar se o Vencedor foi o herói ou o Monstro
         int i; //Parâmetro para saber qual ataque o monstro vai exectuar (valor randomico)
-        int countH = 0; //Contador que irá permitir executar o ataque especial dos herois quando o mesmo atingir um valor específico]  
-        int countM = 0; //Contador que irá permitir executar o ataque especial dos monstros quando o mesmo atingir um valor específico]
+        int countH = 0;
+         //Contador que irá permitir executar o ataque especial dos herois quando o mesmo atingir um valor específico  
+        int countM = 0;
+         //Contador que irá permitir executar o ataque especial dos monstros quando o mesmo atingir um valor específico]
         int option; //Variável utilizada quando o personagem morre. Linha 198
     	Random rand = new Random();
         Scanner scan = new Scanner (System.in);
@@ -32,7 +41,7 @@ public class Prova {
         
         if (escolha == 0){
         	Mago mago = new Mago();
-        	classe = "Mago"; //Atribuição da Classe ao personagem
+        	mago.setClasse("Mago"); //Atribuição da Classe ao personagem
         	mago.setTipo("Magic Power"); //Atribuição do Tipo de personagem
         	mago.setNome(JOptionPane.showInputDialog("Escolha o seu nome:"));
             mago.setAtaque(rand.nextInt(10)); //valor randomico para o ataque do mago
@@ -361,8 +370,7 @@ public class Prova {
         
         if (escolha == 1){
             Guerreiro guerreiro = new Guerreiro();
-            classe = "Guerreiro"; //Atribuição da Classe ao personagem
-            guerreiro.setClasse("Guerreiro");
+            guerreiro.setClasse("Guerreiro"); //Atribuição da Classe ao personagem
             guerreiro.setTipo("Physical Damage"); //Atribuição do Tipo de personagem
             guerreiro.setNome(JOptionPane.showInputDialog("Escolha o seu nome:"));
             guerreiro.setAtaque(rand.nextInt(10)); //valor randomico para o ataque do mago
@@ -681,7 +689,8 @@ public class Prova {
            				"*******************************" + "\n" + "Perdedor: " +  kraken.getNome() + "\n" + "Vida: " + kraken.getVida());
            		JOptionPane.showMessageDialog(null, kraken.getMensagemDeDerrota()); //printar frase de derrota do oponente
            		Object[] tentarNovamente = {"Sim", "Desistir"};
-           		option = JOptionPane.showOptionDialog(null, "E então?", "Novo jogo?", JOptionPane.DEFAULT_OPTION, 3, null, tentarNovamente, tentarNovamente[0]);
+           		option = JOptionPane.showOptionDialog(null, "E então?", "Novo jogo?", JOptionPane.DEFAULT_OPTION, 3, null, tentarNovamente,
+           				tentarNovamente[0]);
            	}
         }
  
@@ -1011,6 +1020,9 @@ public class Prova {
            				tentarNovamente[0]);
            	}
            	
+           	//JOptionPane.showConfirmDialog(null, "Você deseja jogar novamente?");
+           	
+           	
         }
     }
 }
@@ -1140,8 +1152,7 @@ class Herois extends Personagem{
 	public String getNivel(){
 	return nivel;
 	}
-	*/
-	
+*/	
 	public String getTipo(){
 		return tipo;
 	}
