@@ -3,16 +3,16 @@ package prova;
 import javax.swing.*;
 import java.io.*;
 public class LerTxt {
+	CriarTxt nome = new CriarTxt();
+	String loginUsuario[] = new String[5];
+	String loginSenha[] = new String[5];
+	String mostrar = ""; //Local para armazenar o conteudo do arquivo
+	String nomeDoArq = nome.nomeDoArquivo;
+	// nome do do arquivo (eu importei da classe 'CriarTxt' para manter o mesmo nome)
+	String linha = "";
+	String login[][] = new String[5][2];
+	int a = 0; //parametro apra mudar a leitura de usuario e senha
 	public void LerTXT(){
-		CriarTxt nome = new CriarTxt();
-		int a = 0; //parametro apra mudar a leitura de usuario e senha
-		int k = 0;
-		String loginUsuario[] = new String[5];
-		String loginSenha[] = new String[5];
-		String dados = "";
-		String mostrar = ""; //Local para armazenar o conteudo do arquivo
-		String nomeDoArq = nome.nomeDoArquivo; // nome do do arquivo (eu importei da classe 'CriarTxt' para manter o mesmo nome)
-		String linha = "";
 		File arquivo = new File(nomeDoArq); 
 		if(arquivo.exists()){ //retorna valor verdadeiro ou falso
 			mostrar = "Arquivo: " + nomeDoArq + "\n";
@@ -26,12 +26,16 @@ public class LerTxt {
 					loginUsuario[a] = leitor.readLine();
 					loginSenha[a] = leitor.readLine();
 					linha = leitor.readLine();
+					login[a][0] = loginUsuario[a];
+					login[a][1] = loginSenha[a];
 					if((linha == null) || (loginUsuario[a] == null) || (loginSenha[a] == null)){
 						break;
 					}
-					a++;
-				mostrar += linha;
+					mostrar += "Usuário[" + a + "]: " + "\n" + "Nome: " + loginUsuario[a] + "\n" +
+							"Senha: " + loginSenha[a] + linha + "\n\n";
+				a++;
 				}
+				leitor.close();
 			}
 			catch (Exception erro) {}
 			/*
@@ -40,10 +44,7 @@ public class LerTxt {
 				loginSenha[a] = 0; 
 			}
 			*/
-			for(int i = 0; i <= a; i++){
-				dados += loginUsuario[a] + "\n" + loginSenha[a] + "\n";
-			}
-			JOptionPane.showMessageDialog(null, mostrar + "\n" + dados, nomeDoArq, 1);
+			JOptionPane.showMessageDialog(null, mostrar + "\n", nomeDoArq, 1);
 		} else {
 			JOptionPane.showMessageDialog(null, "Arquivo não existe", "Erro", 0);
 		}
