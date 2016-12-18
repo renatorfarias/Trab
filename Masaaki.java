@@ -8,10 +8,7 @@ public class Prova {
     	LerTxt lertxt = new LerTxt();
     	CriarTxt criartxt = new CriarTxt();
     	loginDoJogo login = new loginDoJogo();
-    	lertxt.LerTXT();
-    	criartxt.CriarTXT();
     	
-    	login.login();
     	int habilidade = 0;
          //Faz a comparação com o valor inteiro amazenado para saber qual hailidade o herṕi utilizou. Linha 36
         int escolha; //Variável interia para fazer comparações e saber qual herói o Jogador escolheu. Linha 25 
@@ -22,6 +19,8 @@ public class Prova {
         int countM = 0;
          //Contador que irá permitir executar o ataque especial dos monstros quando o mesmo atingir um valor específico]
         int option; //Variável utilizada quando o personagem morre. Linha 198
+        int resposta0; //Parametro para saber se o jogador já possui uma conta. Linha 33
+        int resposta1; //Parametro para saber se o jogador já possui uma conta. Linha 37
     	Random rand = new Random();
         Scanner scan = new Scanner (System.in);
         Monstros dragon = new Dragao(); //Criandi o objeto Dragão
@@ -33,6 +32,16 @@ public class Prova {
         gigante.setDefesa(rand.nextInt(10)); //valor randomico para a defesa do gigante
         kraken.setAtaque(rand.nextInt(10)); //valor randomico para a defesa do bomba
         kraken.setDefesa(rand.nextInt(10)); //valor randomico para a defesa do bomba
+        /*
+        resposta0 = JOptionPane.showConfirmDialog(null, "Você possui uma conta cadastrada?", "Bem vindo!!", 0, 1);
+        if(resposta0 == 1){
+        	JOptionPane.showMessageDialog(null, "Faça o seu cadastro para poder jogar");
+        	criartxt.CriarTXT();
+        } else{
+        	login.login();
+        } 
+        */      
+        
         JOptionPane.showMessageDialog(null, "Você só possui uma vida");
         JOptionPane.showMessageDialog(null, "Jogue com sabedoria...");
         Object[] herois = {"Mage", "Tanker", "Arqueiro", "Sniper"};
@@ -1179,8 +1188,8 @@ class Guerreiro extends Herois{
 }
 
 class Monstros extends Personagem{
-	private String mensagemDeVitoria = "";
-	private String mensagemDeDerrota = "";
+	private String mensagemDeVitoria = " ";
+	private String mensagemDeDerrota = " ";
 	public String getMensagemDeVitoria(){
 		return "";
 	}
